@@ -1,0 +1,29 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+numpy
+numpy-base
+opencv
+pandas
+pillow
+pip
+protobuf
+py-opencv
+python
+python-dateutil
+#pip install torch==1.4.0 
+#python_abi
+pytorch
+pyyaml
+scikit-image
+scikit-learn
+scipy
+setuptools
+six
+sqlite
+tensorboardx
+toolz
+torchvision
+tornado
+tqdm
+wheel
