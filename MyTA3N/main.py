@@ -418,7 +418,7 @@ def train(num_class, source_loader, target_loader, model, criterion, criterion_d
     pre_processor.train()
     pre_processor.to("cpu")
     for i, ((source_data, source_label, source_id), (target_data, target_label, target_id)) in data_loader:
-        ## Pre-process data
+        ## Pre-process data (not used in our case, not ready yet) #todo:implement the pre-processing (incredibly easy DA paper)
         if args.augmented_inputs:
             source_data, target_data, _ = pre_processor(source_data, target_data)
         source_data, target_data = source_data.to("cuda"), target_data.to("cuda")

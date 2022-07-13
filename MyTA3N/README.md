@@ -1,7 +1,8 @@
 # Domain Adapatation in Egocentric Action Recognition with transformers
-This project proposes a newly based architecture for domain adaptation in the field of egocentric action recognition. It combines the network TA3N with Transformers to 
+This project proposes a newly based architecture for domain adaptation in the field of egocentric action recognition. It combines the network TA3N with Transformers to perform temporal and spatial alignment. 
 This project is based on the original TA3N-EPIC-KITCHENS [code](https://github.com/jonmun/EPIC-KITCHENS-100_UDA_TA3N)
 
+The deep explanation of this architecture can be found, with the features, in the following [link](https://drive.google.com/drive/folders/1qF-AuitdjFguIjbZNwPYDMDHxyN_RfJo?usp=sharing).
 
 ---
 ## Environment
@@ -16,7 +17,7 @@ This project is based on the original TA3N-EPIC-KITCHENS [code](https://github.c
 ## Scripts
 
 ### Setup
-Before running any script it is necessary to setup the paths inside the same scripts with the local configuration. This can be setup in the script
+Before running any script it is necessary to setup the paths. This can be setup in the script
 TestAllModalities.sh.
 The python script datatset.py has also to be modified to include the paths of the labels.
 
@@ -32,9 +33,10 @@ Running those scripts will generate folders with the results.
 
 An example of a running command is : 
 
-`python main.py --dropout_i 0.8 --dropout_v 0.8 --add_fc 1 --use_relation_self_attention True --use_frame_self_attention True
-main.py 8,8 RGB /home/andres/MLDL/EGO_Project_Group4/train_val/D1_train.pkl /home/andres/MLDL/EGO_Project_Group4/train_val/D2_train.pkl str str /home/andres/MLDL/Pre-extracted/RGB/ek_tsm/D1-D1_train /home/andres/MLDL/Pre-extracted/RGB/ek_tsm/D1-D2_train --num_segments 5 --baseline_type video --optimizer SGD --adv_DA RevGrad --train_metric verb --use_target uSv --frame_aggregation avgpool --use_attn none --place_adv Y N N --exp_path ./RESULTSdropouti08dropoutv08addfc1userelationselfattentiontrueuseframeselfattentiontrue/avgpoolnoneynnD1D2 --dropout_i 0.8 --dropout_v 0.8 --add_fc 1 --use_relation_self_attention True --use_frame_self_attention True`
+`python main.py 8,8 RGB /home/andres/MLDL/EGO_Project_Group4/train_val/D1_train.pkl /home/andres/MLDL/EGO_Project_Group4/train_val/D2_train.pkl str str /home/andres/MLDL/Pre-extracted/RGB/ek_tsm/D1-D1_train /home/andres/MLDL/Pre-extracted/RGB/ek_tsm/D1-D2_train --num_segments 5 --baseline_type video --optimizer SGD --adv_DA RevGrad --train_metric verb --use_target uSv --frame_aggregation avgpool --use_attn none --place_adv Y N N --exp_path ./RESULTSdropouti08dropoutv08addfc1userelationselfattentiontrueuseframeselfattentiontrue/avgpoolnoneynnD1D2 --dropout_i 0.8 --dropout_v 0.8 --add_fc 1 --use_relation_self_attention True --use_frame_self_attention True`
 
+
+The arguments accepted by the main.py can be found in the opts.py script.
 
 ## Model
 

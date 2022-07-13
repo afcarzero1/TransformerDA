@@ -137,7 +137,7 @@ class VideoModel(nn.Module):
 		if self.augmented_inputs:
 			self.feature_dim = 3 * self.feature_dim
 
-
+		# Standard deviation of weight initialization
 		std = 0.001
 		feat_shared_dim = min(self.fc_dim, self.feature_dim) if self.add_fc > 0 and self.fc_dim > 0 else self.feature_dim
 		feat_frame_dim = feat_shared_dim
